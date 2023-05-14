@@ -8,11 +8,11 @@ export default function ExposureViewWrapper(){
 
     const [ search, setSearch ] = useSearchParams();
     const [ data, setData ] = useState<any>({});
-    const ID = useMemo(()=>search.get("myInformationId"), [search]);
+    const ID = useMemo(()=>search.get("exposureId"), [search]);
 
     useEffect(()=>{
         if(Boolean(ID)){
-            request.get(`/my-information/get/${ID}`)
+            request.get(`/lecture/get/${ID}`)
             .then((response: any)=>{
                 setData(response.data.data)
             }).catch((error: any)=>console.log(error))

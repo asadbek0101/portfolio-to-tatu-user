@@ -47,7 +47,7 @@ export default function HomeContainer(){
                 <ArticleMenuWrapper
                     bgType="1"
                     limit={8}
-                    select={(value: any)=>naviaget(`/exposure/show?articleId=${value.id}`)}
+                    select={(value: any)=>naviaget(`/article/show?articleId=${value.id}`)}
                     />
         </Box>
 
