@@ -11,6 +11,8 @@ export default function ImageMenu({
     setEntity,
     bgType
 }:Props){
+
+
     return (
             <AppCardMenu 
                 bgType={bgType}

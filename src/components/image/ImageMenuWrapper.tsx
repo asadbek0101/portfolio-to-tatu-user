@@ -17,11 +17,17 @@ export default function ImageMenuWrapper({
     limit = 0
 }:Props){
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState<any[]>([])
 
     useEffect(()=>{
         request.get(`/photo/getAll/${limit}`).then((response: any)=>{
-            setData(response.data.data)
+            response.data.data && response.data.data.map((item: any)=>{
+                const _data = {
+                    ...item,
+                    title: item.name
+                }
+                setData((d: any)=>[...d, _data]);
+            })
         }).catch((error: any)=>{
             console.log(error)
         })
