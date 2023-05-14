@@ -16,7 +16,7 @@ export default function MyInformationContainer(){
                     bgType="1"
                     select={(value: any)=>{
                         navigate({
-                            pathname: `${RouteLinks.ExposureRoute}/${ContainerTabs.View}`,
+                            pathname: `${RouteLinks.MyInformationRoute}/${ContainerTabs.View}`,
                             search: `?${createSearchParams({
                                 myInformationId: value.id
                             })}`

@@ -15,7 +15,7 @@ export default function IndependentWorkContainer(){
                     bgType="1"
                     select={(value: any)=>{
                         navigate({
-                            pathname: `${RouteLinks.ExposureRoute}/${ContainerTabs.View}`,
+                            pathname: `${RouteLinks.IndependentWorkRoute}/${ContainerTabs.View}`,
                             search: `?${createSearchParams({
                                 independentWorkId: value.id
                             })}`
