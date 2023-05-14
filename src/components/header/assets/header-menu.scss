@@ -1,0 +1,36 @@
+.dropdown{
+    background-color: transparent;
+
+    .dropdown-toggle{
+        background-color: transparent;
+        border: none;
+        color: gold;
+        font-weight: bold;
+        font-family: "Roboto", 'sans-serif';
+
+        &:hover{
+            background-color: transparent;
+            color: gold;
+        }
+
+        &:focus{
+            background-color: transparent;
+        }
+
+    }
+
+    .dropdown-menu{
+        padding: 10px;
+
+        a{
+            display: block;
+            text-decoration: none;
+            padding: 4px 10px;
+            color: #000;
+
+            &:hover{
+                background-color: gold;
+            }
+        }
+    }
+}

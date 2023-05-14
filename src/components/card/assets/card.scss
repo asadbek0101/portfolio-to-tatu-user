@@ -1,0 +1,51 @@
+.custom-card{
+    padding: 10px;
+    transition: all ease .7s;
+    border-radius: 2px;
+
+    &:hover{
+        box-shadow: 2px 2px 2px rgb(153, 141, 141);
+    }
+
+    .custom-card-image{
+        margin: 10px 0;
+    }
+
+    .custom-card-title{
+        margin-top: 10px;
+
+        span{
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+
+    .custom-card-description{
+        span{
+            font-family: 'Robot', sans-serif;
+            font-size: 14px;
+        }
+    }
+
+    .custom-card-footer{
+        margin: 10px 0;
+        button{
+            background-color: gold;
+            border: none;
+            width: 100%;
+            text-align: center;
+            padding: 6px;
+            font-family: 'Robot', sans-serif;
+            border-radius: 2px;
+        }
+    }
+}
+
+.bg-second{
+    background-color: #fff;
+}
+
+.bg-first{
+    background-color: #E8EAED;
+}

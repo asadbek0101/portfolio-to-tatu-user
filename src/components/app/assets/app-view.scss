@@ -1,0 +1,27 @@
+.app-view-layout{
+
+    .app-view-image{
+        width: 500px;
+        background-color: green;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .app-view-title{
+        width: 500px;
+        margin: 4px auto;
+        text-align: center;
+
+        span{
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .app-view-description{
+        text-align: justify;
+        span{
+            font-size: 18px;
+        }
+    }
+}

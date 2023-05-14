@@ -1,0 +1,16 @@
+.app-layout{
+    .app-layout-header{
+        width: 100%;
+        height: 10vh;
+    }
+
+    .app-layout-children{
+        width: 100%;
+        min-height: 70vh;
+    }
+
+    .app-layout-footer{
+        width: 100%;
+        height: 20vh;
+    }
+}
