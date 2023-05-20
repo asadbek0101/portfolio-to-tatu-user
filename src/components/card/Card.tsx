@@ -34,7 +34,7 @@ export default function Card({
 
             <div className="custom-card-footer">
                 <button 
-                    style={{width: link === ""?"100%":"70%"}}
+                    style={{width: link === ""?"100%":"80%"}}
                     onClick={onClick}
                     >Ko'rish</button>
                 {link !== "" && (
