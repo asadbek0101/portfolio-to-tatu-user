@@ -4,6 +4,7 @@ import ContainerLayout from "../components/app/ContainerLayout";
 import ExposureMenuWrapper from "../components/exposure/ExposureMenuWrapper";
 import ExposureViewWrapper from "../components/exposure/ExposureViewWrapper";
 import MyInformationMenuWrapper from "../components/my-information/MyInformationMenuWrapper";
+import MyInformationViewWrapper from "../components/my-information/MyInformationViewWrapper";
 
 export default function MyInformationContainer(){
     const { tab = ContainerTabs.Menu } = useParams();
@@ -25,7 +26,7 @@ export default function MyInformationContainer(){
                     />
            )}
             {tab === ContainerTabs.View && (
-                <ExposureViewWrapper/>
+                <MyInformationViewWrapper/>
             )}
         </ContainerLayout>
     )

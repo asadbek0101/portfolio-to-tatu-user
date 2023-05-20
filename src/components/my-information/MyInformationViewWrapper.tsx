@@ -7,16 +7,17 @@ export default function MyInformationViewWrapper(){
 
     const [ search, setSearch ] = useSearchParams();
     const [ data, setData ] = useState<any>({});
-    const ID = useMemo(()=>search.get("exposureId"), [search]);
+    const ID = useMemo(()=>search.get("myInformationId"), [search]);
+
 
     useEffect(()=>{
         if(Boolean(ID)){
-            request.get(`/lecture/get/${ID}`)
+            request.get(`/my-information/get/${ID}`)
             .then((response: any)=>{
                 setData(response.data.data)
             }).catch((error: any)=>console.log(error))
         }
-    },[request])
+    },[request, ID])
 
     return (<ArticleView
                 data={data}
