@@ -3,6 +3,7 @@ import "./assets/card.scss";
 interface CardProps{
     readonly image?: string;
     readonly title?: string;
+    readonly link?: string;
     readonly description?: string;
     readonly onClick?: ()=> void;
     readonly className?: string;
@@ -13,6 +14,7 @@ export default function Card({
     title,
     description,
     className,
+    link,
     onClick
 }:CardProps){
     return (
@@ -34,6 +36,13 @@ export default function Card({
                 <button 
                     onClick={onClick}
                     >Ko'rish</button>
+                <button
+                    disabled={link !== ""?false:true}
+                    >
+                    <a download="PDF Document" target="blacnk" href={link}>
+                    <i className="fa-solid fa-circle-down"></i>
+                    </a>
+                </button>
             </div>
         </div>
     )
