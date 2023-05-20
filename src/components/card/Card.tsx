@@ -39,8 +39,8 @@ export default function Card({
                 <button
                     disabled={link !== ""?false:true}
                     >
-                    <a download="PDF Document" target="blacnk" href={link}>
-                    <i className="fa-solid fa-circle-down"></i>
+                    <a download="PDF Document" target="blacnk" href={link === ""?"":link}>
+                        <i className="fa-solid fa-circle-down"></i>
                     </a>
                 </button>
             </div>
