@@ -36,13 +36,15 @@ export default function Card({
                 <button 
                     onClick={onClick}
                     >Ko'rish</button>
-                <button
-                    disabled={link !== ""?false:true}
-                    >
-                    <a download="PDF Document" target="blacnk" href={link === ""?"":link}>
-                        <i className="fa-solid fa-circle-down"></i>
-                    </a>
-                </button>
+                {link !== "" && (
+                    <button
+                        disabled={link !== ""?false:true}
+                        >
+                        <a download="PDF Document" target="blacnk" href={link === ""?"":link}>
+                            <i className="fa-solid fa-circle-down"></i>
+                        </a>
+                     </button>
+                )}
             </div>
         </div>
     )
