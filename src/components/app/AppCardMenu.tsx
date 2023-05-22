@@ -22,6 +22,16 @@ export default function AppCardMenu({
     setEntity,
 }:AppCardMenuProps){
 
+    if(!data) return (
+        <div>
+             <div className="d-flex justify-content-center align-items-center" style={{
+                    height: "300px"
+                }}>
+                    <span className="fw-bold fs-2">Malumot kelmadi!</span>
+                </div>
+        </div>
+    )
+
     return (
         <div
             className="row py-2"
