@@ -9,7 +9,6 @@ export default function MyInformationViewWrapper(){
     const [ data, setData ] = useState<any>({});
     const ID = useMemo(()=>search.get("myInformationId"), [search]);
 
-
     useEffect(()=>{
         if(Boolean(ID)){
             request.get(`/my-information/get/${ID}`)

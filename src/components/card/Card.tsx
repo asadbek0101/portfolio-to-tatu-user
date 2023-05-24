@@ -1,9 +1,11 @@
+import { useCallback } from "react";
 import "./assets/card.scss";
+import { request } from "../../api/request";
 
 interface CardProps{
     readonly image?: string;
     readonly title?: string;
-    readonly link?: string;
+    readonly generateName?: string;
     readonly description?: string;
     readonly onClick?: ()=> void;
     readonly className?: string;
@@ -14,9 +16,31 @@ export default function Card({
     title,
     description,
     className,
-    link,
+    generateName,
     onClick
 }:CardProps){
+
+    const downloadFile = useCallback((file:any)=>{
+        const index = file.indexOf('.');
+        const type = file.substring(index+1)
+        console.log(type)
+        request.get(`/file/download/${file}`,
+         {
+            responseType: 'blob',
+        }).then((response) => {
+            const href = URL.createObjectURL(response.data);
+            const link = document.createElement('a');
+            link.href = href;
+            link.setAttribute('download', `${file}.${type}`);
+            document.body.appendChild(link);
+            link.click();
+        
+            document.body.removeChild(link);
+            URL.revokeObjectURL(href);
+        });
+    },[request])
+
+    
     return (
         <div 
             className={`custom-card ${className}`}
@@ -34,16 +58,15 @@ export default function Card({
 
             <div className="custom-card-footer">
                 <button 
-                    style={{width: link === ""?"100%":"80%"}}
+                    style={{width: generateName === ""?"100%":"80%"}}
                     onClick={onClick}
                     >Ko'rish</button>
-                {link !== "" && (
+                {generateName !== "" && (
                     <button
-                        disabled={link !== ""?false:true}
+                        disabled={generateName !== ""?false:true}
+                        onClick={()=>downloadFile(generateName)}
                         >
-                        <a download="PDF Document" target="blacnk" href={link === ""?"":link}>
                             <i className="fa-solid fa-circle-down"></i>
-                        </a>
                      </button>
                 )}
             </div>

@@ -4,7 +4,7 @@ import Card from "../card/Card";
 export interface CardProps{
     readonly img: string;
     readonly title: string;
-    readonly link: string;
+    readonly generateName: string;
     readonly description: string;
 }
 
@@ -21,6 +21,8 @@ export default function AppCardMenu({
     bgType,
     setEntity,
 }:AppCardMenuProps){
+
+    console.log(data)
 
     if(!data) return (
         <div>
@@ -46,7 +48,7 @@ export default function AppCardMenu({
                         className={bgType === "1"? "bg-first" : "bg-second"}
                         image={entity.img}
                         title={entity.title}
-                        link={entity.link}
+                        generateName={entity.generateName}
                         description={entity.description}
                         onClick={() => setEntity && setEntity(entity)}
                         />
