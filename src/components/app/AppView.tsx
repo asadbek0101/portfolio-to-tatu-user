@@ -14,7 +14,7 @@ export default function AppView({
 
     return (
         <>
-        {Boolean(title)?(
+        {Boolean(title || description || image)?(
             <div className="app-view-layout">
             {Boolean(image) && (
                 <div className="app-view-image">
